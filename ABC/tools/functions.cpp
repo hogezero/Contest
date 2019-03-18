@@ -52,6 +52,7 @@ vector<int> divisor(int num){
 
 
 /* ユークリッドの互除法 */
+/* 2個の最大公約数 */
 int gcd(int a, int b){
     if(a < b) swap(a, b);
     if(b == 0) return a;
@@ -61,28 +62,20 @@ int gcd(int a, int b){
     }
 }
 
+/* n個の最大公約数 */
+/* n: 負でない整数 */
+/* a[0], a[1], ... a[n-1]の最大公約数 */
+int ngcd(int n, vector<int> a){
+    int i, d;
+
+    d = a.at(0);
+    for(i = 1; i < n && d!= 1; i++){
+        d = gcd(a.at(i), d);
+    }
+    return d;
+}
 
 
-/*
-入力
-a
-x1, x2, ... xa
-**/
 int main(){
-    int a;
-    cin >> a;
-    
-    vector<int> data(a);
-    for(int i = 0; i < a; i++){
-        cin >> data.at(i);
-    }
-
-    for(int i = 0; i < data.size(); i++){
-        cout << data.at(i);
-        if (!(i == data.size())){
-            cout << " ";
-        }
-    }
     cout << endl;
-
 }
