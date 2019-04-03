@@ -1,22 +1,29 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <iomanip>
 using namespace std;
 
 int main(){
-    int a;
-    cin >> a;
-    
-    vector<int> data(a);
-    for(int i = 0; i < a; i++){
-        cin >> data.at(i);
+    int N, K;
+    double rate = 0;
+    double tmp_rate = 0;
+    cin >> N >> K;
+        vector<double> R(N);
+    for(int i = 0; i < R.size(); i++){
+        cin >> R.at(i);
     }
+    sort(R.begin(), R.end());
+    // for(int i = 0; i < R.size(); i++){
+    //     cout << R.at(i) << " ";
+    //     // rate = (rate + R.at(i)) / 2;
+    // }
+    // cout << endl;
 
-    for(int i = 0; i < data.size(); i++){
-        cout << data.at(i);
-        if (!(i == data.size())){
-            cout << " ";
-        }
+    for(int i = N-K ; i < N; i++){
+        rate = (rate + R.at(i)) / 2;
     }
-    cout << endl;
-
+    //printf("%.11f\n", rate);
+    cout << fixed;
+    cout << setprecision(10) << rate << endl;
 }
