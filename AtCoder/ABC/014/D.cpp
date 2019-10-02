@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <iomanip>
 
-void input_vector(int &x);
+void input(int &x);
 void show(int x);
 
 //#define DEBUG
@@ -14,7 +14,7 @@ int main(){
 
 }
 
-void input_vector(int &x){
+void input(int &x){
     cin >> x;
 }
 void show(int x){

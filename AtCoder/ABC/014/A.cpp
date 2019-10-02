@@ -4,17 +4,28 @@
 #include <algorithm>
 #include <iomanip>
 
-void input_vector(int &x);
+void input(int &x);
 void show(int x);
 
 //#define DEBUG
 using namespace std;
 
 int main(){
-
+    int a;
+    int b;
+    cin >> a;
+    cin >> b;
+    if(a == b){
+        cout << 0 << endl;
+        return 0;
+    }
+    
+    else{
+        cout << (b - (a % b)) << endl;
+    }
 }
 
-void input_vector(int &x){
+void input(int &x){
     cin >> x;
 }
 void show(int x){
